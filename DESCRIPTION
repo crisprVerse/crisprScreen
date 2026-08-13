@@ -1,0 +1,27 @@
+Package: crisprScreen
+Title: Functionalities for CRISPR screening analysis
+Version: 0.99.0
+Authors@R: c(
+    person("Jean-Philippe", "Fortin", email = "fortin946@gmail.com", role = c("aut", "cre"))
+    )
+Description: Functionalities for CRISPR screening analysis
+Depends: R (>= 4.2.0),
+    knitr
+Imports:
+    biomaRt,
+    DelayedArray,
+    dplyr,
+    magrittr,
+    matrixStats,
+    methods,
+    plotly,
+    preprocessCore,
+    readr,
+    S4Vectors,
+    stringr,
+    SummarizedExperiment
+Encoding: UTF-8
+VignetteBuilder: knitr
+License: MIT
+LazyData: true
+Config/roxygen2/version: 8.0.0
