@@ -168,39 +168,6 @@ getZPrimeFactor <- function(x,y){
 }
 
 
-#' @export
-#' @importFrom plotly plot_ly
-#' @importFrom plotly layout
-#' @importFrom magrittr %>%
-iplot <- function(x,y,labels,
- xlab="", ylab="",
- title="", col=NULL,
- xlim=c(-10,10),
- ylim=c(0,40)
- ){
-  temp <- data.frame(xx=x, yy=y, label=labels)
-  zeroline <- TRUE
-  type = "scatter"
-  mode="markers"
-  pal <- c("grey75","firebrick2")
-
-  p <- plot_ly(data = temp, x = ~xx, y = ~yy, 
-             text=temp$label,
-             type=type,
-             mode=mode,
-             color=col, colors=pal,
-             source="volcano",
-             selected=list(marker=list(color='blue'))
-             #marker=list(color~col)
-  )
-  
-  p <- p %>%
-    plotly::layout(title = title,
-           xaxis = list(zeroline = zeroline, title=xlab, range=xlim),
-           yaxis = list(zeroline = zeroline, title=ylab, range=ylim)
-           )
-  p
-}
 
 getOverlap <- function(ranks1, ranks2){
     kk <- 1:length(ranks1)

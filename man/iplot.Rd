@@ -4,17 +4,7 @@
 \alias{iplot}
 \title{Interactive scatter plot using plotly (simple wrapper)}
 \usage{
-iplot(
-  x,
-  y,
-  labels,
-  xlab = "",
-  ylab = "",
-  title = "",
-  col = NULL,
-  xlim = c(-10, 10),
-  ylim = c(0, 40)
-)
+iplot(x, y, labels, xlab = "", ylab = "", title = "", col = NULL, pal = NULL)
 }
 \arguments{
 \item{x}{Numeric vector of x values}

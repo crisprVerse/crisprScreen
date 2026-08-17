@@ -2,24 +2,41 @@
 % Please edit documentation in R/getPCs.R
 \name{getPCs}
 \alias{getPCs}
-\title{Get principal components.}
+\title{Get principal components}
 \usage{
 getPCs(se, condition.field, reference.level, replicate.field, how.many = 5000)
 }
 \arguments{
 \item{se}{A SummarizedExperiment object.}
 
-\item{condition.field}{String specifying the name of the column in colData(se)
-that specifies the experimental groups.}
+\item{condition.field}{Character string specifying the column in
+\code{colData(se)} containing the experimental condition.}
 
-\item{reference.level}{String specifying the name of
-the reference group.}
+\item{reference.level}{Character string specifying the reference condition
+used to calculate log-ratios.}
 
-\item{replicate.field}{String specifying the name of the replicate
-column in \code{colData(se)}.}
+\item{replicate.field}{Character string specifying the replicate column in
+\code{colData(se)}.}
 
-\item{how.many}{Numeric value indicating how many PCs to return.}
+\item{how.many}{Maximum number of most-variable features to use for PCA.
+Default is 5000.}
+}
+\value{
+A list containing:
+\itemize{
+  \item \code{pc1}: sample scores for principal component 1.
+  \item \code{pc2}: sample scores for principal component 2.
+  \item \code{perc1}: percentage of variance explained by PC1.
+  \item \code{perc2}: percentage of variance explained by PC2.
+  \item \code{scores}: matrix containing all sample PC scores.
+  \item \code{variance.explained}: percentage of variance explained by
+    each principal component.
+  \item \code{pca}: the complete object returned by \code{prcomp()}.
+}
 }
 \description{
-Get PCs from a Summarized Experiment object.
+Performs principal component analysis on log-ratio profiles derived from a
+SummarizedExperiment object. Log-ratios are calculated relative to a
+reference condition using \code{getLogRatios()}. PCA is performed across
+samples using the most variable features.
 }
